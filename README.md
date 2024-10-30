@@ -2,8 +2,6 @@
 
 Pydantic types to make serializing to/from JSON easier for [faster-whisper].
 
-This repo is locked to a specific commit of the [faster-whisper] repository.
-
 ## Usage
 
 Parse JSON into model parameters:

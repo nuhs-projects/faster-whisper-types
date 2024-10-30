@@ -279,7 +279,7 @@ wheels = [
 [[package]]
 name = "faster-whisper"
 version = "1.0.3"
-source = { git = "https://github.com/SYSTRAN/faster-whisper?rev=2386843fd7f9734e2597b4f36ce263bbc57886ea#2386843fd7f9734e2597b4f36ce263bbc57886ea" }
+source = { git = "https://github.com/SYSTRAN/faster-whisper#814472fdbf7faf5d77d65cdb81b1528c0dead02a" }
 dependencies = [
     { name = "av" },
     { name = "ctranslate2" },
@@ -312,7 +312,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "faster-whisper", git = "https://github.com/SYSTRAN/faster-whisper?rev=2386843fd7f9734e2597b4f36ce263bbc57886ea" },
+    { name = "faster-whisper", git = "https://github.com/SYSTRAN/faster-whisper" },
     { name = "pydantic", specifier = ">=2.9" },
     { name = "python-utils", git = "https://github.com/extrange/python-utils.git" },
 ]
