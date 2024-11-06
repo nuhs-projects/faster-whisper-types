@@ -1,11 +1,11 @@
 from collections.abc import Iterable
+from dataclasses import asdict
 
 from faster_whisper.transcribe import Segment as FwSegment
 from faster_whisper.transcribe import TranscriptionInfo as FwTranscriptionInfo
-from faster_whisper.transcribe import VadOptions as FwVadOptions
 from pydantic import TypeAdapter
 
-from faster_whisper_types.types import Segment, TranscriptionInfo, Word
+from faster_whisper_types.types import Segment, TranscriptionInfo
 
 
 def fw_transcribe_output_to_pydantic(
@@ -20,16 +20,9 @@ def fw_transcribe_output_to_pydantic(
 
 def transcription_info_to_pydantic(info: FwTranscriptionInfo) -> TranscriptionInfo:
     """Convert faster-whisper's TranscriptionInfo to the corresponding Pydantic model."""
-    info_dict = info._asdict()
-    info_dict["transcription_options"] = info_dict["transcription_options"]._asdict()
-    if isinstance(info_dict["vad_options"], FwVadOptions):
-        info_dict["vad_options"] = info_dict["vad_options"]._asdict()
-    return TranscriptionInfo(**info_dict)
+    return TranscriptionInfo.model_validate(asdict(info))
 
 
 def segment_to_pydantic(s: FwSegment) -> Segment:
     """Convert faster-whisper' Segment to the corresponding Pydantic model."""
-    s_dict = s._asdict()
-    if isinstance(s_dict["words"], list):
-        s_dict["words"] = [Word(**w._asdict()) for w in s_dict["words"]]
-    return Segment(**s_dict)
+    return Segment.model_validate(asdict(s))
