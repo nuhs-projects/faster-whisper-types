@@ -4,7 +4,8 @@
   "packageRules": [
     {
       "matchPackageNames": ["python"],
-      "allowedVersions": "!/3.13$/"
+      "groupName": "python",
+      "automerge": false
     }
   ]
 }
