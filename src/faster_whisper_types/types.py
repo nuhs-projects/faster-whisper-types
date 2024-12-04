@@ -70,7 +70,7 @@ class WhisperOptions(_Base):
     vad_filter: bool = False
     clip_timestamps: str | list[float] = "0"
     hallucination_silence_threshold: float | None = None
-    language_detection_threshold: float | None = None
+    language_detection_threshold: float = 0.5
     language_detection_segments: int = 1
 
 
