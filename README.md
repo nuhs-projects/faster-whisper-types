@@ -2,6 +2,8 @@
 
 Pydantic types to make serializing to/from JSON easier for [faster-whisper].
 
+This is required because dataclasses (which faster-whisper uses) cannot be recursively deserialized.
+
 ## Usage
 
 Parse JSON into model parameters:

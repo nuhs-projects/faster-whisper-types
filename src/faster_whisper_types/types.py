@@ -33,7 +33,6 @@ class _Base(BaseModel):
     ]
     compression_ratio_threshold: float | None = 2.4
     log_prob_threshold: float | None = -1.0
-    log_prob_low_threshold: float | None = None
     no_speech_threshold: float | None = 0.6
     initial_prompt: str | Iterable[int] | None = None
     prefix: str | None = None
@@ -58,7 +57,6 @@ class TranscriptionOptions(_Base):
     without_timestamps: bool
     max_initial_timestamp: float
     multilingual: bool
-    output_language: str | None
     clip_timestamps: str | list[dict] | list[float] | None = None
     hallucination_silence_threshold: float | None
 
@@ -69,7 +67,6 @@ class WhisperOptions(_Base):
     without_timestamps: bool = False
     max_initial_timestamp: float = 1.0
     multilingual: bool = False
-    output_language: str | None = None
     vad_filter: bool = False
     clip_timestamps: str | list[float] = "0"
     hallucination_silence_threshold: float | None = None

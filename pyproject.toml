@@ -1,7 +1,11 @@
 [project]
-dependencies = ["faster-whisper", "pydantic>=2.9", "python-utils"]
+dependencies = [
+    "faster-whisper>=1.1.0",
+    "pydantic>=2.9",
+    "python-utils",
+]
 name = "faster-whisper-types"
-version = "0.1.0"
+version = "0.1.1"
 description = "Pydantic types for faster-whisper."
 readme = "README.md"
 requires-python = ">=3.12"
@@ -13,11 +17,12 @@ dev-dependencies = [
     "ruff>=0.6.8",
     "pytest>=8.3.3",
     "pytest-cov>=5.0.0",
+    "nvidia-cublas-cu12>=12.6.4.1",
+    "nvidia-cudnn-cu12==9.*",
 ]
 package = true
 
 [tool.uv.sources]
-faster-whisper = { git = "https://github.com/SYSTRAN/faster-whisper" }
 python-utils = { git = "https://github.com/extrange/python-utils.git" }
 
 [tool.pyright]

@@ -82,7 +82,6 @@ def transcription_info(request) -> FwTranscriptionInfo:
             repetition_penalty=1,
             no_repeat_ngram_size=0,
             log_prob_threshold=-1.0,
-            log_prob_low_threshold=None,
             no_speech_threshold=0.6,
             compression_ratio_threshold=2.4,
             condition_on_previous_text=True,
@@ -101,7 +100,6 @@ def transcription_info(request) -> FwTranscriptionInfo:
             prepend_punctuations="\"'“¿([{-",
             append_punctuations="\"'.。,，!！?？:：”)]}、",  # noqa: RUF001
             multilingual=False,
-            output_language=None,
             max_new_tokens=None,
             clip_timestamps="0",
             hallucination_silence_threshold=None,
