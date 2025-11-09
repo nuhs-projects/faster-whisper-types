@@ -1,5 +1,5 @@
 [project]
-dependencies = ["faster-whisper==1.1.0", "pydantic>=2.9", "python-utils"]
+dependencies = ["faster-whisper==1.2.1", "pydantic>=2.9", "python-utils"]
 name = "faster-whisper-types"
 version = "0.1.1"
 description = "Pydantic types for faster-whisper."
